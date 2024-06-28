@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1>
+    {% block title %}Campus{% endblock %}
+</h1>
+
+<div class="container mt-5">
+    <h1>Selecciona tu semestre</h1>
+    <form method="POST">
+        <div class="form-group">
+            <label for="semestre">Selecciona tu semestre, Ingenieria de sistemas</label>
+            <select id="semestre" name="semestre" class="form-control" required>
+                {% for semestre in semestres %}
+                    <option value="{{ semestre.id }}">{{ semestre.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Seleccionar</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+{% endblock %}
